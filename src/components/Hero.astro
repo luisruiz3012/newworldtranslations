@@ -1,0 +1,26 @@
+---
+import Retype from '../components/react-components/Retype.jsx';
+---
+
+<section id="hero" class="w-full lg:flex-row flex-col lg:h-[85vh] flex justify-between items-center lg:p-20 px-10 py-20">
+  <div class="lg:w-2/3">
+    <h1 class="text-5xl lg:text-6xl font-semibold">New World Translations</h1>
+    <div class="text-yellow-500 text-4xl lg:text-5xl font-semibold">
+      <Retype client:visible />
+    </div>
+
+    <p class="py-8 text-lg">
+      Unlock new horizons and connect with the world through the power of our expert translations. Break down language barriers effortlessly.
+    </p>
+
+    <div class=" lg:w-[45%] pr-10 lg:hidden flex">
+      <img src="/images/undraw2.svg" class="" alt="world image" />
+    </div>
+
+    <a href="/#services" class="font-bold hidden lg:flex w-28 text-white bg-black px-4 py-3 mt-10 rounded-md">Lean more</a>
+  </div>
+  <div class="w-72 lg:w-[45%] pr-10 hidden lg:flex">
+    <img src="/images/undraw2.svg" class="" alt="world image" />
+  </div>
+  <a href="/#services" class="font-bold text-white bg-black px-4 py-3 mt-12 lg:hidden rounded-md">Lean more</a>
+</section>

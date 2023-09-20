@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon'
+const currentPath = Astro.url.pathname;
+
+const selected = (option) => {
+  switch (currentPath === option) {
+    case true:
+      return "text-yellow-400 font-semibold";
+      break;
+    default:
+      return "";
+  }
+}
+---
+
+<script>
+  const menu = document.getElementById("mobile-menu");
+  const header = document.querySelector("header");
+  const button = document.getElementById("mobile-button");
+
+  button.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+    header.classList.toggle("fixed");
+  });
+
+
+</script>
+
+<header class="flex p-8 items-center justify-between shadow-lg bg-green-800 text-white left-0 z-20 h-28 right-0">
+  <a href="/">
+    <img src="/images/logo.png" class="w-48 lg:w-80" alt="logo">
+    <!-- <img src="/images/logo.png" class="flex lg:hidden rounded-lg" alt="logo"> -->
+  </a>
+  <nav class="hidden lg:flex">
+    <ul class="flex gap-6">
+      <li class="hover:text-yellow-400 hover:font-semibold"><a href="/">Home</a></li>
+      <li class="hover:text-yellow-400 hover:font-semibold"><a href="/#services">Services</a></li>
+      <li class="hover:text-yellow-400 hover:font-semibold"><a href="/#about">About</a></li>
+      <li class="hover:text-yellow-400 hover:font-semibold"><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <button class="w-8 lg:hidden" id="mobile-button">
+    <Icon name="octicon:three-bars-16" />
+  </button>
+</header>

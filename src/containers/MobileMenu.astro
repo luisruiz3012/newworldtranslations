@@ -1,0 +1,27 @@
+<script>
+  const link1 = document.getElementById("nav-link1");
+  const link2 = document.getElementById("nav-link2");
+  const link3 = document.getElementById("nav-link3");
+  const link4 = document.getElementById("nav-link4");
+  const menu = document.getElementById("mobile-menu");
+  const header = document.querySelector("header");
+
+  function toggleHidden() {
+    menu.classList.toggle("hidden");
+    header.classList.toggle("fixed");
+  }
+
+  link1.addEventListener("click", toggleHidden);
+  link2.addEventListener("click", toggleHidden);
+  link3.addEventListener("click", toggleHidden);
+  link4.addEventListener("click", toggleHidden);
+</script>
+
+<nav class="hidden bg-gray-700 text-white opacity-90 w-full h-screen z-10 top-28 fixed" id="mobile-menu">
+  <ul class="flex flex-col items-center justify-center gap-2 text-xl">
+    <a id="nav-link1" class="bg-gray-900 p-10 w-full text-center" href="/">Home</href=>
+    <a id="nav-link2" class="bg-gray-900 p-10 w-full text-center" href="/#services">Services</a>
+    <a id="nav-link3" class="bg-gray-900 p-10 w-full text-center" href="/#about">About</a>
+    <a id="nav-link4" class="bg-gray-900 p-10 w-full text-center" href="/#contact">Contact</a>
+  </ul>
+</nav>
