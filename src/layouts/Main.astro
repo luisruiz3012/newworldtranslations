@@ -3,8 +3,23 @@ const {title} = Astro.props;
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileMenu from '../containers/MobileMenu.astro';
-import TopButton from '../components/TopButton.astro';
 ---
+
+<script>
+	const header = document.querySelector("#header");
+
+	window.addEventListener('scroll', () => {
+		const height = document.documentElement.scrollTop;
+		
+		if (height > 380) {
+			header.className = "w-full bg-white text-black py-4 px-8 z-10 top-0 fixed flex items-center justify-between h-18 transition-all duration-500 shadow-md ease-in-out"
+			console.log('Soy mayor')
+		} else {
+			header.className = "w-full bg-gradient-to-b from-gray-800 to-transparent text-white py-4 px-8 bg-opacity-80 z-10 top-0 fixed flex items-center justify-between h-20"
+			console.log('Soy menor')
+		}
+	});
+</script>
 
 <html lang="en">
 	<head>
@@ -16,10 +31,9 @@ import TopButton from '../components/TopButton.astro';
 	</head>
 	<body>
     <Header />
-		<MobileMenu />
-		<main class="bg-gray-100">
+		<!-- <MobileMenu /> -->
+		<main class="bg-gray-100" id="main">
       <slot />
-			<TopButton />
     </main>
     <Footer />
 	</body>

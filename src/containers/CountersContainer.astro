@@ -1,0 +1,29 @@
+---
+import { Counter } from "../components/react-components/Counter";
+---
+
+<section class="text-white bg-gray-900 p-10">
+  <div class="flex flex-col lg:flex-row items-center justify-center gap-9">
+    <Counter 
+    client:visible 
+    number={20} 
+    prefix="+" 
+    title="Years of experience" 
+    delay={30}  
+  />
+  <Counter 
+    client:visible 
+    number={1000} 
+    prefix="+" 
+    title="Documents translated" 
+    delay={0.1}  
+  />
+  <Counter 
+    client:visible  
+    number={10} 
+    prefix="+" 
+    title="Industries served" 
+    delay={50}
+  />
+  </div>
+</section>

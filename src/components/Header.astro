@@ -5,7 +5,7 @@ const currentPath = Astro.url.pathname;
 const selected = (option) => {
   switch (currentPath === option) {
     case true:
-      return "text-yellow-400 font-semibold";
+      return "text-green-400 font-semibold";
       break;
     default:
       return "";
@@ -18,28 +18,28 @@ const selected = (option) => {
   const header = document.querySelector("header");
   const button = document.getElementById("mobile-button");
 
-  button.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-    header.classList.toggle("fixed");
-  });
-
-
 </script>
 
-<header class="flex p-8 items-center justify-between shadow-lg bg-green-800 text-white left-0 z-20 h-28 right-0">
-  <a href="/">
-    <img src="/images/logo.png" class="w-48 lg:w-80" alt="logo">
-    <!-- <img src="/images/logo.png" class="flex lg:hidden rounded-lg" alt="logo"> -->
+<header id="header" class="w-full bg-gradient-to-b from-gray-800 to-transparent text-white py-4 px-8 bg-opacity-80 z-10 top-0 fixed flex items-center justify-between h-20">
+  <a href="/" class="flex gap-4 items-center">
+    <img src="/images/logo2.png" class="w-10" alt="logo">
+    <h1 class="hidden md:flex text-lg font-semibold">New World Translations</h1>
   </a>
-  <nav class="hidden lg:flex">
-    <ul class="flex gap-6">
-      <li class="hover:text-yellow-400 hover:font-semibold"><a href="/">Home</a></li>
-      <li class="hover:text-yellow-400 hover:font-semibold"><a href="/#services">Services</a></li>
-      <li class="hover:text-yellow-400 hover:font-semibold"><a href="/#about">About</a></li>
-      <li class="hover:text-yellow-400 hover:font-semibold"><a href="/#contact">Contact</a></li>
-    </ul>
+
+  <nav class="hidden md:flex">
+    <ul class="flex flex-row justify-center">
+      <!-- <li>
+        <a class={`p-4 ${selected("/")} `} href="/">Home</a>
+      </li>
+      <li>
+        <a class={`p-4 ${selected("/about")}`} href="/about">About</a>
+      </li>
+      <li>
+        <a class={`p-4 ${selected("/#services")}`} href="/#services">Services</a>
+      </li>
+      <li>
+        <a class={`p-4 ${selected("/#contact")}`} href="/#contact">Contact</a>
+      </li>
+    </ul> -->
   </nav>
-  <button class="w-8 lg:hidden" id="mobile-button">
-    <Icon name="octicon:three-bars-16" />
-  </button>
 </header>

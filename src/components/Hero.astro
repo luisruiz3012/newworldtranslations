@@ -2,25 +2,45 @@
 import Retype from '../components/react-components/Retype.jsx';
 ---
 
-<section id="hero" class="w-full lg:flex-row flex-col lg:h-[85vh] flex justify-between items-center lg:p-20 px-10 py-20">
-  <div class="lg:w-2/3">
-    <h1 class="text-5xl lg:text-6xl font-semibold">New World Translations</h1>
-    <div class="text-yellow-500 text-4xl lg:text-5xl font-semibold">
-      <Retype client:visible />
+
+<section class="h-screen relative">
+  <div class="absolute w-full h-full bg-gradient-to-r from-black to-transparent opacity-70"></div>
+  <div class="absolute text-white h-full flex justify-center p-8 lg:p-0 lg:w-2/3 lg:pl-20 flex-col gap-12">
+    <h1 class="text-4xl lg:text-7xl font-bold">Welcome to New World Translations</h1>
+    <p class="text-md lg:text-xl">We are a translation company with more than 20 years of experience, serving the translation and interpretation needs of our national and foreign clients</p>
+
+    <div class="button">
+      <a href="/" class="p-4 bg-green-600 hover:bg-green-700 hover:underline hover:font-semibold text-white w-full rounded-full px-8">Learn more</a>
     </div>
-
-    <p class="py-8 text-lg">
-      Unlock new horizons and connect with the world through the power of our expert translations. Break down language barriers effortlessly.
-    </p>
-
-    <div class=" lg:w-[45%] pr-10 lg:hidden flex">
-      <img src="/images/undraw2.svg" class="" alt="world image" />
-    </div>
-
-    <a href="/#services" class="font-bold hidden lg:flex w-28 text-white bg-black px-4 py-3 mt-10 rounded-md">Lean more</a>
   </div>
-  <div class="w-72 lg:w-[45%] pr-10 hidden lg:flex">
-    <img src="/images/undraw2.svg" class="" alt="world image" />
-  </div>
-  <a href="/#services" class="font-bold text-white bg-black px-4 py-3 mt-12 lg:hidden rounded-md">Lean more</a>
 </section>
+
+<style>
+  section {
+    background-image: url('/img/Hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  h1 {
+    animation: 1s ease-in 0s 1 slideInFromLeft;
+  }
+
+  p {
+    animation: 1s ease-in 0s 1 slideInFromLeft;
+  }
+
+  .button {
+    animation: 1s ease-in 0s 1 slideInFromLeft;
+  }
+</style>
