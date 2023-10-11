@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /temp/
+Disallow: /images/
+Disallow: /img/
+
+User-agent: Googlebot
+Disallow: /no-index/
+
+User-agent: Bingbot
+Disallow: /temp/
