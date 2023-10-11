@@ -9,7 +9,6 @@ export const Counter = ({number, title, prefix, delay}) => {
     const interval = setInterval(() => {
       if (count < maxCount) {
         setCount(count + 1);
-        console.log('Hola')
       }
     }, delay); // Adjust the interval (in milliseconds) as needed
 

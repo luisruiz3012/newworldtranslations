@@ -19,7 +19,7 @@
     <div class="flex flex-col lg:flex-row gap-4">
       <div class="flex flex-col">
         <label for="from">From:</label>
-        <select required name="from" id="" class="p-2 border border-gray-500 rounded-md bg-white">
+        <select required name="from" id="from" class="p-2 border border-gray-500 rounded-md bg-white">
           <option value="">Select langauge</option>
           <option value="English">English</option>
           <option value="Spanish">Spanish</option>
@@ -27,7 +27,7 @@
       </div>
       <div class="flex flex-col">
         <label for="to">To:</label>
-        <select required name="to" id=""class="p-2 border border-gray-500 rounded-md bg-white">
+        <select required name="to" id="to"class="p-2 border border-gray-500 rounded-md bg-white">
           <option value="">Select langauge</option>
           <option value="English">English</option>
           <option value="Spanish">Spanish</option>
@@ -37,7 +37,7 @@
 
     <div class="flex flex-col">
       <label for="type of document">Type of document</label>
-      <select name="type of document" id="" class="p-2 border border-gray-500 rounded-md bg-white">
+      <select name="type of document" id="type of document" class="p-2 border border-gray-500 rounded-md bg-white">
         <option value="">Select langauge</option>
         <option value="Legal">Legal</option>
         <option value="Medical">Medical</option>
@@ -52,7 +52,8 @@
 
     <textarea name="type of document description" id="" placeholder="If other, please specify" class="p-2 border border-gray-500 rounded-md bg-white"></textarea>
 
-    <input required type="file" name="attachment" accept="image/png, image/jpeg, .pdf, .doc, .docx, .ppt, .pptx">
+    <label for="attachment">Attachment</label>
+    <input required type="file" id="attachment" name="attachment" accept="image/png, image/jpeg, .pdf, .doc, .docx, .ppt, .pptx">
 
     <button type="submit" class="bg-green-600 hover:bg-green-700 hover:underline hover:font-semibold text-white w-full rounded-full px-8 py-4">Get Quote</button>
   </form>

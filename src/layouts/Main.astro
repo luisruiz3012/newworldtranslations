@@ -13,10 +13,8 @@ import MobileMenu from '../containers/MobileMenu.astro';
 		
 		if (height > 380) {
 			header.className = "w-full bg-white text-black py-4 px-8 z-10 top-0 fixed flex items-center justify-between h-18 transition-all duration-500 shadow-md ease-in-out"
-			console.log('Soy mayor')
 		} else {
 			header.className = "w-full bg-gradient-to-b from-gray-800 to-transparent text-white py-4 px-8 bg-opacity-80 z-10 top-0 fixed flex items-center justify-between h-20"
-			console.log('Soy menor')
 		}
 	});
 </script>
@@ -28,6 +26,7 @@ import MobileMenu from '../containers/MobileMenu.astro';
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta name="description" content="New World Translations is a translation company that provide services in multiple countries around the world and translates documents from english to spanish and spanish to english">
 	</head>
 	<body>
     <Header />
