@@ -1,5 +1,7 @@
 ---
 const {title} = Astro.props;
+const currentPath = Astro.url.pathname;
+
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileMenu from '../containers/MobileMenu.astro';
@@ -8,12 +10,31 @@ import MobileMenu from '../containers/MobileMenu.astro';
 <script>
 	const header = document.querySelector("#header");
 
+	const height = document.documentElement.scrollTop;
+	const isIndex = !(document.documentURI.slice(-1) == "/");
+	const isAbout = document.documentURI.includes("about");
+	const isServices = document.documentURI.includes("services");
+	const isContact = document.documentURI.includes("contact");
+
+	if (isIndex) {
+		header.className = "w-full bg-white text-black py-4 px-8 z-10 top-0 fixed flex items-center justify-between h-20 transition-all duration-500 shadow-md ease-in-out"
+	} else {
+		header.className = "w-full bg-gradient-to-b from-gray-800 to-transparent text-white py-4 px-8 bg-opacity-80 z-10 top-0 fixed flex items-center justify-between h-20"
+	}
+
 	window.addEventListener('scroll', () => {
 		const height = document.documentElement.scrollTop;
-		
-		if (height > 380) {
-			header.className = "w-full bg-white text-black py-4 px-8 z-10 top-0 fixed flex items-center justify-between h-18 transition-all duration-500 shadow-md ease-in-out"
-		} else {
+		const isAbout = document.documentURI.includes("about");
+		const isServices = document.documentURI.includes("services");
+		const isContact = document.documentURI.includes("contact");
+
+		console.log(isIndex)
+
+		if (height > 380 && !isIndex) {
+			header.className = "w-full bg-white text-black py-4 px-8 z-10 top-0 fixed flex items-center justify-between h-20 transition-all duration-500 shadow-md ease-in-out"
+		} else if (isAbout || isServices || isContact) {
+			header.className = "w-full bg-white text-black py-4 px-8 z-10 top-0 fixed flex items-center justify-between h-20 transition-all duration-500 shadow-md ease-in-out"
+		}	else {
 			header.className = "w-full bg-gradient-to-b from-gray-800 to-transparent text-white py-4 px-8 bg-opacity-80 z-10 top-0 fixed flex items-center justify-between h-20"
 		}
 	});
@@ -30,7 +51,7 @@ import MobileMenu from '../containers/MobileMenu.astro';
 	</head>
 	<body>
     <Header />
-		<!-- <MobileMenu /> -->
+		<MobileMenu />
 		<main class="bg-gray-100" id="main">
       <slot />
     </main>
