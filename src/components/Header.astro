@@ -1,54 +1,57 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
 const currentPath = Astro.url.pathname;
 
 const selected = (option) => {
   switch (currentPath === option) {
     case true:
-      return "text-green-500 font-semibold";
+      return 'text-green-500 font-semibold';
       break;
     default:
-      return "";
+      return '';
   }
-}
+};
 ---
 
 <script>
-  const menu = document.getElementById("mobile-menu");
-  const header = document.querySelector("header");
-  const button = document.getElementById("mobile-button");
+  const menu = document.getElementById('mobile-menu');
+  const header = document.querySelector('header');
+  const button = document.getElementById('mobile-button');
 
   function toggleHidden() {
-    menu.classList.toggle("hidden");
+    menu.classList.toggle('hidden');
   }
 
   button.addEventListener('click', toggleHidden);
 </script>
 
-<header id="header" class="w-full bg-gradient-to-b from-gray-800 to-transparent text-white py-4 px-8 bg-opacity-80 z-10 top-0 fixed flex items-center justify-between h-20">
-  <a href="/" class="flex gap-4 items-center">
-    <img src="/images/logo2.png" class="w-10" alt="logo">
-    <h2 class="hidden md:flex text-lg font-semibold">New World Translations</h2>
+<header
+  id='header'
+  class='w-full bg-gradient-to-b from-gray-800 to-transparent text-white py-4 px-8 bg-opacity-80 z-10 top-0 fixed flex items-center justify-between h-24'
+>
+  <a href='/' class='flex gap-4 items-center'>
+    <img src='/img/logo.png' class='w-48 lg:w-72' alt='logo' />
+    <!-- <h2 class='hidden md:flex text-lg font-semibold'>New World Translations</h2> -->
   </a>
 
-  <nav class="hidden md:flex">
-    <ul class="flex flex-row justify-center">
+  <nav class='hidden md:flex'>
+    <ul class='flex flex-row justify-center'>
       <li>
-        <a class={`p-4 ${selected("/")} `} href="/">Home</a>
+        <a class={`p-4 ${selected('/')} `} href='/'>Home</a>
       </li>
       <li>
-        <a class={`p-4 ${selected("/about")}`} href="/about">About</a>
+        <a class={`p-4 ${selected('/about')}`} href='/about'>About</a>
       </li>
       <!-- <li>
         <a class={`p-4 ${selected("/#services")}`} href="/#services">Services</a>
       </li> -->
       <li>
-        <a class={`p-4 ${selected("/contact")}`} href="/contact">Contact</a>
+        <a class={`p-4 ${selected('/contact')}`} href='/contact'>Contact</a>
       </li>
     </ul>
   </nav>
 
-  <button id="mobile-button" class="md:hidden">
-    <Icon name="mdi:menu" class="h-6" />
+  <button id='mobile-button' class='md:hidden'>
+    <Icon name='mdi:menu' class='h-6' />
   </button>
 </header>
